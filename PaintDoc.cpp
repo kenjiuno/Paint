@@ -44,6 +44,8 @@ BOOL xDoc::OnNewDocument()
 
 	// TODO: この位置に再初期化処理を追加してください。
 	// (SDI ドキュメントはこのドキュメントを再利用します。
+	offscreen.DeleteObject();
+	VERIFY(offscreen.CreateBitmap(128, 128, 1, GetDeviceCaps(NULL, BITSPIXEL), NULL));
 
 	return TRUE;
 }
@@ -135,3 +137,14 @@ void xDoc::Dump(CDumpContext& dc) const
 
 
 // xDoc コマンド
+
+
+BOOL xDoc::OnOpenDocument(LPCTSTR lpszPathName)
+{
+	if (!CDocument::OnOpenDocument(lpszPathName))
+		return FALSE;
+
+	// TODO:  Add your specialized creation code here
+
+	return TRUE;
+}

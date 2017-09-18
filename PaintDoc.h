@@ -14,9 +14,17 @@ protected: // シリアル化からのみ作成します。
 
 // 属性
 public:
+	CBitmap offscreen;
 
 // 操作
 public:
+	CSize getOffscreenSize() const {
+		BITMAP bm = { 0 };
+		if (offscreen.GetBitmap(&bm) == sizeof(bm)) {
+			return CSize(bm.bmWidth, bm.bmHeight);
+		}
+		return CSize(0, 0);
+	}
 
 // オーバーライド
 public:
@@ -45,4 +53,6 @@ protected:
 	// 検索ハンドラーの検索コンテンツを設定するヘルパー関数
 	void SetSearchContent(const CString& value);
 #endif // SHARED_HANDLERS
+public:
+	virtual BOOL OnOpenDocument(LPCTSTR lpszPathName);
 };

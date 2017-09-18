@@ -43,7 +43,7 @@ xApp::xApp()
 
 	// TODO: 下のアプリケーション ID 文字列を一意の ID 文字列で置換します。推奨される
 	// 文字列の形式は CompanyName.ProductName.SubProduct.VersionInformation です
-	SetAppID(_T("Paint.AppID.NoVersion"));
+	SetAppID(_T("kenjiuno.Paint.0.1"));
 
 	// TODO: この位置に構築用コードを追加してください。
 	// ここに InitInstance 中の重要な初期化処理をすべて記述してください。
@@ -83,7 +83,7 @@ BOOL xApp::InitInstance()
 	// 設定が格納されているレジストリ キーを変更します。
 	// TODO: 会社名または組織名などの適切な文字列に
 	// この文字列を変更してください。
-	SetRegistryKey(_T("アプリケーション ウィザードで生成されたローカル アプリケーション"));
+	SetRegistryKey(_T("Paint"));
 	LoadStdProfileSettings(16);  // 標準の INI ファイルのオプションをロードします (MRU を含む)
 
 
